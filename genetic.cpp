@@ -29,11 +29,11 @@ void genetic::run(){
     double baseFitness = population[0]->getFitness();
     double bestFitness = baseFitness;
 
-    cout << "All generated tour are shown as follow:" << endl << endl;
+    cout << "All of the generated tours are shown as follow:" << endl << endl;
     for(auto t : population){
         cout << t->print() << endl;
     }
-    cout <<  "Base distance of genetic algorithm is: "<< base_distance << endl << endl;
+    cout <<  "Base distance of genetic algorithm: "<< base_distance << endl << endl;
 
     cout <<  "Genetic algorithm starts, process will terminate when improvement factor reach: "<< IMPROVEMENT_FACTOR << endl << endl;
     int iteration = 0;
@@ -51,12 +51,12 @@ void genetic::run(){
         mutate();
 
         cout << "Iteration " << iteration << endl;
-        cout << "Best distance in this iteration is:"<< best_distance << endl;
-        cout << "Improvement of this iteration compared to base is:" << bestFitness / baseFitness - 1 << endl << endl;
+        cout << "Best distance in this iteration:"<< best_distance << endl;
+        cout << "Improvement of this iteration compared to base:" << bestFitness / baseFitness - 1 << endl << endl;
         ++iteration;
     }
 
-    cout << "Genetic algorithm terminated, the final best tour is: " << endl << endl;
+    cout << "The final best tour: " << endl << endl;
     cout << population[0]->print() << endl;
 
 }

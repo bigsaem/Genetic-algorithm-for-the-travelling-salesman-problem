@@ -66,7 +66,8 @@ void tour::setDistance(double distance) {
 }
 
 double tour::getFitness() {
-    return 1 / getDistance() * SCALAR;
+    return 1/ getDistance()*SCALAR;
+//    return 1 / getDistance() * SCALAR;
 }
 
 void tour::calcDistance() {

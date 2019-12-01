@@ -22,8 +22,8 @@ private:
     double distance;
 
 public:
-    //a random picked scalar to calculate the fitness
-    static constexpr int SCALAR = 114514;
+    //a random salar
+    static constexpr int SCALAR = 5894;
     //the mutation rate of tour is 15%
     static constexpr int MUTATION_RATE = 15;
 
