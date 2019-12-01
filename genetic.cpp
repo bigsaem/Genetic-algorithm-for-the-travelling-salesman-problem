@@ -25,7 +25,7 @@ void genetic::run(){
     moveEliteToFront();
 
     base_distance = best_distance = population[0]->getDistance();
-
+    auto baseTour = population[0]->getCities();
     double baseFitness = population[0]->getFitness();
     double bestFitness = baseFitness;
 
@@ -55,8 +55,21 @@ void genetic::run(){
         cout << "Improvement of this iteration compared to base:" << bestFitness / baseFitness - 1 << endl << endl;
         ++iteration;
     }
-
-    cout << "The final best tour: " << endl << endl;
+    cout << "----------Final Report----------"<<endl;
+    cout << "Base Distance: " << base_distance <<endl;
+    cout << "Base Tour: " << endl;
+    int i = 0;
+    string res;
+    for(auto cPtr : baseTour){
+        res += cPtr->print();
+        res += "\n";
+        ++i;
+    }
+    cout << res << endl;
+    cout << "Total iteration: "<< iteration - 1 <<endl;
+    cout << "Target improvement factor achieved?: ";
+    iteration < ITERATIONS ? cout<<"Yes"<<endl : cout<<"No"<<endl;
+    cout << "The final best tour: " << endl;
     cout << population[0]->print() << endl;
 
 }
